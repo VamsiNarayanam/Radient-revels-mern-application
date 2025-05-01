@@ -16,28 +16,27 @@ export const sendMessage = async (req, res) => {
     });
   } catch (error) {
     if (error.name === "ValidationError") {
-        let errorMessage = "";
-        if (error.errors.name) {
-          errorMessage += error.errors.name.message + " ";
-        }
-        if (error.errors.email) {
-          errorMessage += error.errors.email.message + " ";
-        }
-        if (error.errors.subject) {
-          errorMessage += error.errors.subject.message + " ";
-        }
-        if (error.errors.message) {
-          errorMessage += error.errors.message.message + " ";
-        }
-        return res.status(400).json({
-          success: false,
-          message: errorMessage,
-        });
+      let errorMessage = "";
+      if (error.errors.name) {
+        errorMessage += error.errors.name.message + " ";
       }
-
-    return res.status(500).json({
+      if (error.errors.email) {
+        errorMessage += error.errors.email.message + " ";
+      }
+      if (error.errors.subject) {
+        errorMessage += error.errors.subject.message + " ";
+      }
+      if (error.errors.message) {
+        errorMessage += error.errors.message.message + " ";
+      }
+      return res.status(400).json({
         success: false,
-        message: "Unknown Error",
+        message: errorMessage,
       });
     }
-  };
+    return res.status(500).json({
+      success: false,
+      message: "Unknown Error",
+    });
+  }
+};

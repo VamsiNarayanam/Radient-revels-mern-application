@@ -10,16 +10,16 @@ const Navbar = () => {
       <div className={show ? "navLinks showmenu" : "navLinks"}>
         <div className="links">
           <Link to="hero" spy={true} smooth={true} duration={500}>
-          HOME
+            HOME
           </Link>
           <Link to="services" spy={true} smooth={true} duration={500}>
-           SERVICES 
+            SERVICES
           </Link>
           <Link to="about" spy={true} smooth={true} duration={500}>
             ABOUT
           </Link>
           <Link to="contact" spy={true} smooth={true} duration={500}>
-            CONTACT 
+            CONTACT
           </Link>
         </div>
       </div>

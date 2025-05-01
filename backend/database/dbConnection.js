@@ -1,12 +1,16 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
-export const dbConnection = () => {
-  mongoose
-    .connect(process.env.MONGO_URI, { dbName: "MERN_STACK_EVENT_MESSAGE" })
-    .then(() => {
-      console.log("Connected to database!");
-    })
-    .catch((err) => {
-      console.log("Some error occured while connecting to database:", err);
+export const dbConnection = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
+    console.log("✅ Connected to MongoDB!");
+  } catch (err) {
+    console.error("❌ Error connecting to database:", err);
+    process.exit(1);
+  }
 };

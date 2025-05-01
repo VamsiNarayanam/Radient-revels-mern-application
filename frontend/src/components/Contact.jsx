@@ -57,7 +57,7 @@ const Contact = () => {
           <div className="item">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.462929009477!2d77.06222711459259!3d28.58749999225124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01a9d19021c1%3A0x92a5d43d0cf1c8f9!2sSector%207%2C%20Dwarka%2C%20New%20Delhi%2C%20Delhi%20110075!5e0!3m2!1sen!2sin!4v1709102059409!5m2!1sen!2sin"
-              
+
               style={{ border: 0, width: "100%", height: "450px" }}
               allowFullScreen=""
               loading="lazy"
