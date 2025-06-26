@@ -12,7 +12,7 @@ const Contact = () => {
     e.preventDefault();
     await axios
       .post(
-        "http://localhost:4000/api/v1/message/send",
+        "http://localhost:5000/message",
         {
           name,
           email,
@@ -20,7 +20,6 @@ const Contact = () => {
           message,
         },
         {
-          withCredentials: true,
           headers: { "Content-Type": "application/json" },
         }
       )
