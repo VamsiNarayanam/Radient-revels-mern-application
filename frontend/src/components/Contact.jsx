@@ -12,7 +12,7 @@ const Contact = () => {
     e.preventDefault();
     await axios
       .post(
-        "http://localhost:5000/message",
+        "https://radient-revels-mern-application-9od.vercel.app/message",
         {
           name,
           email,
